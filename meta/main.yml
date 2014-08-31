@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Rob Knight
+  description: Ansible role for installing and configuring MySQL Server
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+    - Ubuntu 14.04
+  categories:
+    - web
+    - database
+    - mysql
