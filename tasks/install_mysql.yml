@@ -24,3 +24,11 @@
 
 - name: Remove MySQL test database
   mysql_db: db=test state=absent login_user=root login_password={{ mysql_root_password }}
+
+- name: Create drupal database
+  mysql_db: db={{ drupal_db_name }} state=present login_user=root login_password={{ mysql_root_password }}
+  when: drupal_db_name is defined
+
+- name: Create drupal database user
+  mysql_user: name={{ drupal_db_user }} password={{ drupal_db_user_pass }} priv="*.*:ALL" state=present login_user=root login_password={{ mysql_root_password }}
+  when: drupal_db_user is defined
