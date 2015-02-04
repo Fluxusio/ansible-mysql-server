@@ -1,5 +1,13 @@
 ---
 
+- name: Install MySQL Client Core
+  apt: name=mysql-client-core-5.6 state=present install_recommends=yes update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Install MySQL Client
+  apt: name=mysql-client-5.6 state=present install_recommends=yes update_cache=yes cache_valid_time=3600
+  sudo: yes
+
 - name: Install MySQL Server Core
   apt: name=mysql-server-core-5.6 state=present install_recommends=yes update_cache=yes cache_valid_time=3600
   sudo: yes
